@@ -15,7 +15,7 @@ export function Sidebar() {
           <Avatar src="https://github.com/eduardowinter.png" />
 
           <strong>Eduardo Winter</strong>
-          <span>Web Developer</span>
+          <span>Full Stack Developer</span>
       </div>
 
       <footer>
