@@ -19,23 +19,23 @@ const posts: Post[] = [
       role: 'Full Stack Developer'
     },
     content: [
-      { type: 'paragraph', content: 'Fala galeraa 👋' },
-      { type: 'paragraph', content: 'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀' },
-      { type: 'link', content: 'jane.design/doctorcare' },
+      { type: 'paragraph', content: 'Hey, Folks! 👋' },
+      { type: 'paragraph', content: 'Just added a new project to my portfolio. Be sure to check it out in the link below. 🚀' },
+      { type: 'link', content: 'github.com/eduardowinter' },
     ],
     publishedAt: new Date('2022-09-30 15:00:00'),
   },
   {
     id: 2,
     author: {
-      avatarUrl: 'https://github.com/maykbrito.png',
-      name: 'Mayk Brito',
-      role: 'Educator @Rocketseat'
+      avatarUrl: 'https://github.com/eduardowinter.png',
+      name: 'Eduardo Winter',
+      role: 'Full Stack Developer'
     },
     content: [
-      { type: 'paragraph', content: 'Fala galeraa 👋' },
-      { type: 'paragraph', content: 'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀' },
-      { type: 'link', content: 'jane.design/doctorcare' },
+      { type: 'paragraph', content: 'Hey, Folks! 👋' },
+      { type: 'paragraph', content: 'Just added a new project to my portfolio. Be sure to check it out in the link below. 🚀' },
+      { type: 'link', content: 'github.com/eduardowinter' },
     ],
     publishedAt: new Date('2022-10-01 15:00:00'),
   },

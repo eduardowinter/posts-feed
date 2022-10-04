@@ -1,7 +1,7 @@
 import { ChangeEvent, FormEvent, InvalidEvent, useState  } from 'react';
 
 import { format, formatDistanceToNow } from 'date-fns';
-import ptBR from 'date-fns/locale/pt-BR'
+import enUS from 'date-fns/locale/en-US'
 
 import { Comment } from './Comment';
 import { Avatar } from './Avatar';
@@ -27,18 +27,18 @@ export interface PostProps {
 
 export function Post({ author, publishedAt, content }: PostProps) {
   const [comments, setComments] = useState([
-    'Amazing post, keep it up!'
+    'Amazing, keep it up!'
   ]);
 
   const [newCommentText, setNewCommentText] = useState('')
   
   
-  const publishedDateFormatted = format(publishedAt, "d 'de' LLLL 'às' HH:mm'h'", {
-    locale: ptBR,
+  const publishedDateFormatted = format(publishedAt, "LLLL d 'at' HH:mm'h'", {
+    locale: enUS,
   })
 
   const publishedDateRelativeToNow = formatDistanceToNow(publishedAt, {
-    locale: ptBR,
+    locale: enUS,
     addSuffix: true,
   })
 
@@ -46,6 +46,8 @@ export function Post({ author, publishedAt, content }: PostProps) {
     event.preventDefault()
     
     setComments([...comments, newCommentText]);
+
+    console.log(comments)
 
     setNewCommentText('');
   }
@@ -96,11 +98,11 @@ export function Post({ author, publishedAt, content }: PostProps) {
       </div>
 
       <form onSubmit={handleCreateNewComment} className={styles.commentForm}>
-        <strong>Deixe seu feedback</strong>
+        <strong>Give your feedback</strong>
 
         <textarea 
           name="comment"
-          placeholder="Deixe um comentário"
+          placeholder="Leave a comment..."
           value={newCommentText}
           onChange={handleNewCommentChange}
           onInvalid={handleNewCommentChangeInvalid}
@@ -108,7 +110,7 @@ export function Post({ author, publishedAt, content }: PostProps) {
         />
 
       <footer>
-        <button type="submit" disabled={isNewCommentEmpty}>Publicar</button>
+        <button type="submit" disabled={isNewCommentEmpty}>Publish</button>
       </footer>
       </form>
 
@@ -118,7 +120,8 @@ export function Post({ author, publishedAt, content }: PostProps) {
             <Comment 
               key={comment} 
               content={comment} 
-              onDeleteComment={deleteComment} 
+              onDeleteComment={deleteComment}
+              publishedAtComment={publishedAt}
             />
           )
         })}
